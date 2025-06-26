@@ -22,7 +22,7 @@ export function HeroSection() {
               <MoveRight className="ml-2 h-5 w-5" />
             </Button>
           </a>
-          <a href="/cv-placeholder.pdf" download>
+          <a href="/fabian-reyes-cv.pdf" download>
             <Button size="lg" variant="outline">
               <Download className="mr-2 h-5 w-5" />
               Download CV
