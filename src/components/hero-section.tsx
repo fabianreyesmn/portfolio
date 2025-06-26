@@ -7,7 +7,7 @@ export function HeroSection() {
       id="home"
       className="relative flex min-h-screen w-full items-center justify-center bg-background"
     >
-      <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white_50%,transparent_100%)]"></div>
+      <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white_50%,transparent_100%)] pointer-events-none"></div>
       <div className="container mx-auto flex flex-col items-center justify-center px-4 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl font-headline">
           Fabián Reyes
