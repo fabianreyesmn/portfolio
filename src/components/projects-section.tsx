@@ -3,9 +3,9 @@ import { ProjectCard, type Project } from './project-card';
 const projects: Project[] = [
   {
     name: 'Earthly',
-    screenshotUrl: 'https://placehold.co/600x400.png',
+    screenshotUrls: ['/images/earthly1.jpg', '/images/earthly2.jpg', '/images/earthly3.jpg', '/images/earthly4.jpg'],
     imageHint: 'app educativa para niños',
-    stack: ['Java', 'Andoid Studio', 'XML', 'Canvas'],
+    stack: ['Kotlin', 'Andoid Studio', 'XML', 'Canvas'],
     description: 'Un entorno interactivo que visualiza el AST y ejecuta análisis léxico/sintáctico para uso educativo.',
     contributions: 'Interactive Android application that teaches flags, biomes, cardinal points, and continents. Includes a compass and custom components.',
     repoUrl: 'https://github.com/fabianreyesmn/earthly',
@@ -13,7 +13,7 @@ const projects: Project[] = [
   },
   {
     name: 'Cook & Rate',
-    screenshotUrl: 'https://placehold.co/600x400.png',
+    screenshotUrls: ['/images/cnr1.jpg', '/images/cnr2.jpg', '/images/cnr3.jpg', '/images/cnr4.jpg'],
     imageHint: 'red social culinaria',
     stack: ['Node.js', 'Express', 'Android', 'MySQL', 'HBase', 'Elasticsearch', 'Kibana', 'Docker'],
     description: 'Culinary social network for sharing and rating recipes with distributed storage.',
@@ -23,7 +23,7 @@ const projects: Project[] = [
   },
   {
     name: 'Amor Incondicional',
-    screenshotUrl: 'https://placehold.co/600x400.png',
+    screenshotUrls: ['/images/amorinc1.jpg', '/images/amorinc2.jpg', '/images/amorinc3.jpg', '/images/amorinc4.jpg'],
     imageHint: 'app para agendar citas veterinarias',
     stack: ['Android', 'Java', 'Canvas', 'JSON'],
     description: 'Web platform for scheduling veterinary appointments, featuring a Node.js backend and Firebase database.',

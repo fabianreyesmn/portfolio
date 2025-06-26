@@ -51,8 +51,8 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <a href="#home" className="flex items-center gap-2 font-bold font-headline text-lg">
-          <Mountain className="h-6 w-6 text-primary" />
+        <a href="#home" className="flex items-center gap-4 font-bold font-headline text-lg">
+          <img src="/images/profile.jpg" alt="Fabián Reyes" className="h-10 w-10 rounded-full object-cover" />
           <span>Fabián Reyes</span>
         </a>
 
@@ -70,7 +70,7 @@ export function Header() {
           <SheetContent side="right" className="w-[280px] bg-background">
             <div className="p-6">
               <a href="#home" className="flex items-center gap-2 font-bold font-headline text-lg mb-8">
-                <Mountain className="h-6 w-6 text-primary" />
+                <img src="/images/profile.jpg" alt="Fabián Reyes" className="h-6 w-6 rounded-full object-cover" />
                 <span>TechFolio</span>
               </a>
               <nav className="flex flex-col space-y-4">
