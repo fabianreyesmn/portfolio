@@ -53,7 +53,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <a href="#home" className="flex items-center gap-2 font-bold font-headline text-lg">
           <Mountain className="h-6 w-6 text-primary" />
-          <span>TechFolio</span>
+          <span>Fabián Reyes</span>
         </a>
 
         <nav className="hidden items-center space-x-6 md:flex">
