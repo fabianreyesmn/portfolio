@@ -25,6 +25,20 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openModal = (imageUrl: string) => {
+    setSelectedImage(imageUrl);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+    setIsModalOpen(false);
+  };
+
+
 
   const nextImage = () => {
     if (project.screenshotUrls && project.screenshotUrls.length > 0) {
@@ -71,16 +85,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
             />            
             <Button
               variant="ghost"
-              size="icon"
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80"
+              size='icon'
+              style={project.name === 'Amor Incondicional' ? { position: 'absolute', left: '0.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 20 } : {}}
+ // Add this style for debugging
+
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black"
               onClick={prevImage}
             >
               {"<"} {/* Replace with an actual arrow icon if desired */}
             </Button>
             <Button
               variant="ghost"
-              size="icon"
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80"
+              size='icon'
+              style={project.name === 'Amor Incondicional' ? { position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 20 } : {}}
+ // Add this style for debugging
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black"
               onClick={nextImage}
             >
               {">"} {/* Replace with an actual arrow icon if desired */}
