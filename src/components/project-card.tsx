@@ -1,6 +1,7 @@
 'use client';
 
 import Image, { StaticImageData } from 'next/image';
+import { Dialog, DialogContent, DialogOverlay, DialogTitle } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -60,6 +61,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <Card className="flex h-full flex-col overflow-hidden bg-card text-card-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogOverlay />
+        <DialogContent className="max-w-screen-lg">
+ <DialogTitle>Selected Project Image</DialogTitle>{selectedImage && <Image src={selectedImage} alt="Selected Project Screenshot" width={1200} height={800} className="w-full h-full object-contain mx-auto max-h-[80vh]" />}
+        </DialogContent>
+      </Dialog>
+
       <CardHeader>
         <CardTitle className="font-headline text-2xl">{project.name}</CardTitle>
         <CardDescription>{project.description}</CardDescription>
@@ -75,31 +83,29 @@ export function ProjectCard({ project }: ProjectCardProps) {
               className="absolute inset-0 w-full h-full object-cover filter blur-lg transform scale-110 z-0"
             />
 
-            <Image
-              src={project.screenshotUrls![currentImageIndex]}
-              alt={`Screenshot ${currentImageIndex + 1} of ${project.name}`}
-              width={600}
-              height={400}
-              className="relative z-10 object-contain w-auto h-full"
-              data-ai-hint={project.imageHint}
-            />            
+            <div onClick={() => openModal(project.screenshotUrls![currentImageIndex])} className="absolute inset-0 z-20 cursor-pointer flex justify-center items-center">
+              <Image
+                src={project.screenshotUrls![currentImageIndex]}
+                alt={`Screenshot ${currentImageIndex + 1} of ${project.name}`}
+                width={600}
+                height={400}
+                className="relative z-10 object-contain w-auto h-full"
+                data-ai-hint={project.imageHint}
+              />
+            </div>
+
             <Button
               variant="ghost"
-              size='icon'
-              style={project.name === 'Amor Incondicional' ? { position: 'absolute', left: '0.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 20 } : {}}
- // Add this style for debugging
-
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black"
+              size="icon"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black z-20"
               onClick={prevImage}
             >
               {"<"} {/* Replace with an actual arrow icon if desired */}
             </Button>
             <Button
               variant="ghost"
-              size='icon'
-              style={project.name === 'Amor Incondicional' ? { position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 20 } : {}}
- // Add this style for debugging
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black"
+              size="icon"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black z-20"
               onClick={nextImage}
             >
               {">"} {/* Replace with an actual arrow icon if desired */}
@@ -108,14 +114,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
         ) : (
           <div className="aspect-video overflow-hidden rounded-md border">
             {project.screenshotUrl && (
-            <Image
-              src={project.screenshotUrl}
-              alt={`Screenshot of ${project.name}`}
-              width={600}
-              height={400}
-              className="h-full w-full object-cover"
-              data-ai-hint={project.imageHint}
-            />
+              <div onClick={() => { if (typeof project.screenshotUrl === 'string') { openModal(project.screenshotUrl); } }} className="relative z-10 cursor-pointer w-full h-full">
+                <Image
+ src={project.screenshotUrl}
+ alt={`Screenshot of ${project.name}`}
+ width={600}
+ height={400}
+ className="h-full w-full object-cover"
+ data-ai-hint={project.imageHint}
+                />
+              </div>
             )}
           </div>
         )}
