@@ -1,7 +1,7 @@
 import type {NextConfig} from 'next';
 
 // IMPORTANT: Replace 'TechFolio' with your GitHub repository name.
-const repo = 'TechFolio';
+const repo = 'fabianreyesmn';
 
 const nextConfig: NextConfig = {
   /* config options here */
