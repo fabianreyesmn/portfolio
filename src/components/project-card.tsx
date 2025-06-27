@@ -97,7 +97,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black z-20"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-[#40342C] z-20"
               onClick={prevImage}
             >
               {"<"} {/* Replace with an actual arrow icon if desired */}
@@ -105,7 +105,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black z-20"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-[#40342C] z-20"
               onClick={nextImage}
             >
               {">"} {/* Replace with an actual arrow icon if desired */}
