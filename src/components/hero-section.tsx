@@ -13,7 +13,7 @@ export function HeroSection() {
           Fabián Reyes
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-foreground/80 md:text-xl">
-          Desarrollador Android y Backend con pasión por la tecnología educativa, el software libre y los proyectos con impacto real. Bienvenido a mi portafolio.
+          Android and Backend Developer with a passion for technology, open-source software, and projects with real impact. Welcome to my portfolio.
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <a href="#projects">
