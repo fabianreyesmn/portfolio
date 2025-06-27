@@ -6,7 +6,7 @@ const repo = 'portfolio';
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  basePath: `/${repo}`,
+  distDir: 'out',
   assetPrefix: `/${repo}/`,
   typescript: {
     ignoreBuildErrors: true,
