@@ -141,7 +141,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </CardContent>
       <CardFooter className="flex-shrink-0">
-        <div className="flex w-full items-center justify-end space-x-4">
+        <div className="flex w-full items-center justify-end space-x-4 text-[#40342C]">
           <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="sm">
               <Github className="mr-2" />
