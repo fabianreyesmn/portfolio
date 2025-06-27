@@ -1,7 +1,13 @@
 import type {NextConfig} from 'next';
 
+// IMPORTANT: Replace 'TechFolio' with your GitHub repository name.
+const repo = 'TechFolio';
+
 const nextConfig: NextConfig = {
   /* config options here */
+  output: 'export',
+  basePath: `/${repo}`,
+  assetPrefix: `/${repo}/`,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,6 +15,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
